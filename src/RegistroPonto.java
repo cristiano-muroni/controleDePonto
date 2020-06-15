@@ -7,7 +7,7 @@ public class RegistroPonto {
 	private LocalDate dataRegistro;
 	private LocalDateTime horaEntrada;
 	private LocalDateTime horaSaida;
-	private Funcionario funcionario;
+
 
 	public String getIdRegPonto() {
 		return idRegPonto;
@@ -44,7 +44,6 @@ public class RegistroPonto {
 	public void apresentarRegistroPonto() {
 		DateTimeFormatter horaEdata = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		DateTimeFormatter data = DateTimeFormatter.ofPattern("dd/MM/YYYY");
-		System.out.println("O funcionário: " + funcionario.getNome());
 		System.out.println("Data do registro: " + dataRegistro.format(data));
 		System.out.println("Hora de entrada no trabalho: " + horaEntrada.format(horaEdata));
 		System.out.println("Hora de saída do trabalho: " + horaSaida.format(horaEdata));

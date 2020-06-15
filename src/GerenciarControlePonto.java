@@ -19,7 +19,8 @@ public class GerenciarControlePonto {
 		Gerente gerente = null;
 		Secretaria secretaria = null;
 		Operador operador = null;
-		// Funcionario funcionario = null;
+		Funcionario funcionario = null;
+		RegistroPonto registroPonto = null;
 
 		for (int i = 1; i <= 1; i++) {
 
@@ -95,9 +96,21 @@ public class GerenciarControlePonto {
 			registrandoPontos.add(registroponto3);
 
 		}
+		int cont = 2;
+		
 
-		for (RegistroPonto run : registrandoPontos) {
-			run.apresentarRegistroPonto();
+		for (Funcionario run : funcionarios) {
+			funcionario = new Funcionario();
+			funcionario.setNome(run.getNome());
+			System.out.println(funcionario.getNome());
+			for (int i = 0; i < registrandoPontos.size() - cont; i++) {
+				registroPonto = new RegistroPonto();
+				registroPonto = registrandoPontos.get(i);
+				registroPonto.apresentarRegistroPonto();
+				
+				
+				
+			}
 
 		}
 
