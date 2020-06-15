@@ -14,10 +14,12 @@ public class GerenciarControlePonto {
 		List<Secretaria> secretarias = new ArrayList<Secretaria>();
 		List<Operador> operadores = new ArrayList<Operador>();
 		List<RegistroPonto> registrandoPontos = new ArrayList<RegistroPonto>();
+		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
 		Gerente gerente = null;
 		Secretaria secretaria = null;
 		Operador operador = null;
+		// Funcionario funcionario = null;
 
 		for (int i = 1; i <= 1; i++) {
 
@@ -36,6 +38,7 @@ public class GerenciarControlePonto {
 			gerente.setSenha(sc.nextLine());// obs o login é maiseleegentefina
 
 			gerentes.add(gerente);// add na lista de gerentes
+			funcionarios.add(gerente);
 
 			secretaria = new Secretaria();// inicio da captura de dados da secretaria
 			System.out.println("Digite o Id da secretaria");
@@ -52,6 +55,7 @@ public class GerenciarControlePonto {
 			secretaria.setRamal(sc.nextLine());
 
 			secretarias.add(secretaria);// add na lista de secretarias
+			funcionarios.add(secretaria);
 
 			operador = new Operador();// inicio da captura dos dados dos operadores
 			System.out.println("digite o id do operador");
@@ -62,27 +66,28 @@ public class GerenciarControlePonto {
 			operador.setEmail(sc.nextLine());
 			System.out.println("Digite o CPF do operador");
 			operador.setDocumento(sc.nextLine());
-			//System.out.println("digite o valor hora do operador");
-			//operador.setValorHora(Double.parseDouble(sc.nextLine()));
+			System.out.println("digite o valor hora do operador");
+			operador.setValorHora(Double.parseDouble(sc.nextLine()));
 
 			operadores.add(operador);// add operadores na lista
+			funcionarios.add(operador);
 			// logo abaixo iremos seguir registrando os pontos de ambos
 			RegistroPonto registroponto1 = new RegistroPonto();
 			registroponto1.setDataRegistro(java.time.LocalDate.now());
 			registroponto1.setHoraEntrada(java.time.LocalDateTime.now());
-			//Thread.sleep(1000);
+			Thread.sleep(8000);
 			registroponto1.setHoraSaida(java.time.LocalDateTime.now());
 
 			RegistroPonto registroponto2 = new RegistroPonto();
 			registroponto2.setDataRegistro(java.time.LocalDate.now());
 			registroponto2.setHoraEntrada(java.time.LocalDateTime.now());
-			//Thread.sleep(1000);
+			Thread.sleep(8000);
 			registroponto2.setHoraSaida(java.time.LocalDateTime.now());
 
 			RegistroPonto registroponto3 = new RegistroPonto();
 			registroponto3.setDataRegistro(java.time.LocalDate.now());
 			registroponto3.setHoraEntrada(java.time.LocalDateTime.now());
-			//Thread.sleep(1000);
+			Thread.sleep(8000);
 			registroponto3.setHoraSaida(java.time.LocalDateTime.now());
 
 			registrandoPontos.add(registroponto1);
@@ -92,8 +97,7 @@ public class GerenciarControlePonto {
 		}
 
 		for (RegistroPonto run : registrandoPontos) {
-			System.out.println(run.apresentarRegistroPonto());
-			        //System.out.println(alunoX.toString());
+			run.apresentarRegistroPonto();
 
 		}
 
