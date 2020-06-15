@@ -19,4 +19,16 @@ public class Gerente extends Funcionario {
 		this.senha = senha;
 	}
 
+	/*public boolean validar(String senha, String login) {
+		String s = "maiseleegentefina";
+		String l = "gerentebravo";
+		if (senha == s && login == l) {
+			System.out.println("logado com sucesso");
+
+		}else {
+			System.out.println("senha e login incorretos");
+		}
+		return true;
+	}*/
+
 }
